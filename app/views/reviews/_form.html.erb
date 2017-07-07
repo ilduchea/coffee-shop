@@ -1,0 +1,8 @@
+<%= render "layouts/errors", :object => @product %>
+
+<%= form_for [@product, Review.new] do |f| %>
+  <div class="form-group">
+    <%= f.text_area :body, class: "form-control", placeholder: "Your Review" %>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

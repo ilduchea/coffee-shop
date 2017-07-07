@@ -1,5 +1,9 @@
 <%= render "layouts/errors", :object => @product %>
 
 <%= form_for @product do |f| %>
-  <%= f.submit %>
+  <%= f.text_field :name, placeholder: "Product's Name" %> <br>
+  <%= f.number_field :cost, placeholder: "Product's Cost" %> <br>
+  <%= f.text_field :origin, placeholder: "Product's Country of Origin" %> <br>
+  <%= f.text_field :description, placeholder: "Product Description" %> <br>
+  <%= f.submit class: "btn btn-primary" %>
 <% end %>

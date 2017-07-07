@@ -9,15 +9,32 @@
   </head>
 
   <body>
-    <% if current_user %>
-      <%= current_user.email %> | <%= link_to "Sign out", '/signout' %>
-    <% else %>
-      <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %>
-    <% end %>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Coffee Shop</h1>
+      </div>
+      <div class="navbar">
+        <ul class="nav navbar-nav navbar-left">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Products", products_path %></li>
+          <li><%= link_to "New Product", new_product_path %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+          <li><%= current_user.email %></li>
+            <li><%= link_to "Sign out", '/signout' %></li>
+          <% else %>
+            <li><%= link_to "Sign up", 'signup' %></li>
+            <li><%= link_to "Sign in", '/signin' %></li>
+          <% end %>
+        </ul>
+      </div>
 
-    <%= flash[:alert] %>
-    <%= flash[:notice] %>
-    
-    <%= yield %>
+
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
+
+      <%= yield %>
+    </div>
   </body>
 </html>
