@@ -54,7 +54,7 @@
       * timestamps
   * review validations.
     * presence of author
-    * presence of content_body
+    * presence of body
   * review relationships
     * belongs to product
 
