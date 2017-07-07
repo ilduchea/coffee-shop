@@ -1,18 +1,20 @@
 <h2><%= @product.name %></h2>
 
+<div class="buttons">
+  <% if is_admin? %>
+    <%= link_to "Edit", edit_product_path(@product.id), class: "btn btn-info" %>
+    <%= link_to "Delete", product_path(@product.id),
+          :data => {:confirm => "You sure?",
+          :method => "delete"},
+          class: "btn btn-danger" %>
+  <% end %>
+</div>
+
 <h3>Cost: $<%= @product.cost %></h3>
 <h3>Origin: <%= @product.origin %></h3>
 <h3>Description</h3>
 <h4><%= @product.description %></h4>
 
-<div class="buttons">
-  <%= link_to "Edit", edit_product_path(@product.id), class: "btn btn-info" %>
-  <%= link_to "Delete", product_path(@product.id),
-                            :data => {:confirm => "You sure?",
-                                      :method => "delete"},
-                            class: "btn btn-danger" %>
-  <%= link_to "Return to products", products_path, class: "btn btn-info" %>
-</div>
 
 <h3>Reviews</h3>
 

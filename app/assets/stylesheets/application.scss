@@ -1,94 +1,98 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
- @import "bootstrap-sprockets";
- @import "bootstrap";
- 
- $offWhite: #DCCCA3;
- $lightGreen: #90AA86;
- $black: #232528;
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
- body {
-   background: $lightGreen;
-   color: $black;
-   .jumbotron {
-     background: $black;
-     color: $offWhite;
-   }
+$offWhite: #DCCCA3;
+$lightGreen: #90AA86;
+$black: #232528;
 
-   .btn, input {
-     margin: 5px;
-   }
+body {
+  background: $lightGreen;
+  color: $black;
+  .jumbotron {
+    background: $black;
+    color: $offWhite;
+  }
 
-   .buttons {
-     display: inline-flex;
-   }
+  .btn, input {
+    margin: 5px;
+  }
 
-   a {
-     color: $black;
-   }
+  .buttons {
+    display: inline-flex;
+  }
 
-   input {
-     background: $offWhite;
-   }
+  a {
+    color: $black;
+  }
 
-   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-     color: $black;
-   }
-   ::-moz-placeholder { /* Firefox 19+ */
-     color: $black;
-   }
-   :-ms-input-placeholder { /* IE 10+ */
-     color: $black;
-   }
+  input {
+    background: $offWhite;
+  }
 
-   .panel {
-     color: $offWhite;
-     border-color: $black;
-     .panel-heading {
-       background: $black;
-     }
-     .panel-body {
-       background: $offWhite;
-       color: $black;
-     }
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $black;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: $black;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: $black;
+  }
 
-     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-       color: $black;
-     }
-     ::-moz-placeholder { /* Firefox 19+ */
-       color: $black;
-     }
-     :-ms-input-placeholder { /* IE 10+ */
-       color: $black;
-     }
+  .panel {
+    color: $offWhite;
+    border-color: $black;
+    .panel-heading {
+      background: $black;
+    }
+    .panel-body {
+      background: $offWhite;
+      color: $black;
+    }
 
-     input[type="text"], input[type="number"], textarea {
-       background: $lightGreen;
-     }
-   }
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: $black;
+    }
+    ::-moz-placeholder { /* Firefox 19+ */
+      color: $black;
+    }
+    :-ms-input-placeholder { /* IE 10+ */
+      color: $black;
+    }
 
-   .navbar {
-     .nav {
-       li {
-         a:hover {
-           background: $black;
-           color: $offWhite;
-           border-radius: 5px;
-         }
-       }
-     }
-   }
- }
+    input[type="text"], input[type="number"], textarea {
+      background: $lightGreen;
+    }
+  }
+
+  .navbar {
+    .nav {
+      .nav_text {
+        padding: 15px;
+      }
+
+      li {
+        a:hover {
+          background: $black;
+          color: $offWhite;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}

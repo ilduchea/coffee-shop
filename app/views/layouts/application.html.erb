@@ -16,12 +16,18 @@
       <div class="navbar">
         <ul class="nav navbar-nav navbar-left">
           <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Products", products_path %></li>
-          <li><%= link_to "New Product", new_product_path %></li>
+          <% if current_user %>
+            <li><%= link_to "Products", products_path %></li>
+          <% else %>
+            <li class="nav_text">Sign in to view our products</li>
+          <% end %>
+          <% if is_admin? %>
+            <li><%= link_to "New Product", new_product_path %></li>
+          <% end %>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
-          <li><%= current_user.email %></li>
+            <li class="nav_text"><%= current_user.name %></li>
             <li><%= link_to "Sign out", '/signout' %></li>
           <% else %>
             <li><%= link_to "Sign up", 'signup' %></li>
