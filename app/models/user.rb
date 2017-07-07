@@ -2,7 +2,11 @@ class User < ApplicationRecord
   attr_accessor :password
   validates_confirmation_of :password
   validates :email, :presence => true, :uniqueness => true
-  before_save :encrypt_password
+  before_save :encrypt_password, :default_values
+
+  def default_values
+    self.admin ||= false
+  end
 
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt
