@@ -9,7 +9,7 @@
           class: "btn btn-danger" %>
   <% end %>
 </div>
-
+<%= image_tag @product.image.url %>
 <h3>Cost: $<%= @product.cost %></h3>
 <h3>Origin: <%= @product.origin %></h3>
 <h3>Description</h3>

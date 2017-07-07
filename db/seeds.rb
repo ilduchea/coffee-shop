@@ -19,11 +19,13 @@ User.destroy_all
 end
 
 50.times do |index1|
+  i = rand(1..3)
   myProduct = Product.create!(
     name: Faker::Coffee.blend_name,
     cost: Faker::Number.between(1, 50),
     origin: Faker::Coffee.origin,
-    description: Faker::Coffee.notes
+    description: Faker::Coffee.notes,
+    image: File.new("app/assets/images/coffee#{i}.jpg")
   )
   5.times do |index2|
     myProduct.reviews.create!(
