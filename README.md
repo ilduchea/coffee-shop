@@ -49,16 +49,12 @@
 
   * review model.
       * author - string
-      * content_body - string
-      * rating - integer
+      * body - string
       * product_id - integer
       * timestamps
   * review validations.
     * presence of author
     * presence of content_body
-    * presence of rating
-      * min number 1
-      * max number 5
   * review relationships
     * belongs to product
 
