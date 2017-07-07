@@ -1,8 +1,14 @@
 class ProductsController < ApplicationController
-  before_action :authorize, only: [:secret]
-
-  def secret
+  before_action :except => [:landing] do
+    flash[:notice] = "Please create an account."
+    redirect_to signup_path unless current_user
   end
+
+  before_action :except => [:show, :index, :landing] do
+    flash[:notice] = "Admin privilages required!"
+    redirect_to signin_path unless is_admin?
+  end
+
 
   def landing
   end
