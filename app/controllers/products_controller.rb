@@ -1,4 +1,12 @@
 class ProductsController < ApplicationController
+  before_action :authorize, only: [:secret]
+
+  def secret
+  end
+
+  def landing
+  end
+
   def index
     @products = Product.all
   end
@@ -46,6 +54,6 @@ class ProductsController < ApplicationController
 private
   def product_params
     # Use strict parameters, replace placeholder info below with your class' actual attributes
-    params.require(:product).permit(:attribute1, :attribute2, :attribute3)
+    params.require(:product).permit(:name, :cost, :origin, :description)
   end
 end
