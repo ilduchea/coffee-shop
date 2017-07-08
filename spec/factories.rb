@@ -7,7 +7,7 @@ FactoryGirl.define do
   end
   factory :user do
     name 'Qwerty Jr'
-    email 'qwertyjr@email.com'
+    email 'qwertyjr1@email.com'
     password 'password'
   end
   factory :admin, class: User do
