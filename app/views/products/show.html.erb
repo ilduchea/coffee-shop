@@ -4,7 +4,7 @@
   <div class="col-md-6">
     <div class="buttons">
       <% if is_admin? %>
-        <%= link_to "Edit", edit_product_path(@product.id), class: "btn btn-info" %>
+        <%= link_to "Edit", edit_product_path(@product.id), class: "btn" %>
         <%= link_to "Delete", product_path(@product.id),
               :data => {:confirm => "You sure?",
               :method => "delete"},
@@ -18,7 +18,7 @@
   </div>
 
   <div class="col-md-6">
-    <%= image_tag @product.image.url %>
+    <%= image_tag @product.image.url, class: 'image' %>
   </div>
 </div>
 <h3>Reviews</h3>

@@ -16,16 +16,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$offWhite: #DCCCA3;
-$lightGreen: #90AA86;
-$black: #232528;
+$offWhite: #FFEDDF;
+$brown: #86615C;
+$black: #0D1321;
+$lightred: #ED6A5A;
+$red: #FE4A49;
 
 body {
-  background: $lightGreen;
+  background: $brown;
   color: $black;
   .jumbotron {
     background: $black;
     color: $offWhite;
+    text-align: center;
   }
 
   .btn, input {
@@ -76,7 +79,7 @@ body {
     }
 
     input[type="text"], input[type="number"], textarea {
-      background: $lightGreen;
+      background: $brown;
     }
   }
 
@@ -96,7 +99,37 @@ body {
     }
   }
 
-  image {
-    height: 800px;
+  .image {
+    width: 100%;
+  }
+
+  .btn {
+    background: $offWhite;
+    color: $black;
+  }
+
+  .btn:hover {
+    background: $black;
+    color: $offWhite;
+  }
+
+  .btn-inverse {
+    background: $black;
+    color: $offWhite;
+  }
+
+  .btn-inverse:hover {
+    background: $brown;
+    color: $black;
+  }
+
+  .btn-danger {
+    background: $red;
+    color: $black;
+  }
+
+  .btn-danger:hover {
+    background: $lightred;
+    color: $black;
   }
 }
