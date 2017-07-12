@@ -23,29 +23,31 @@
 </div>
 <h3>Reviews</h3>
 
-<% @product.reviews.each do |review| %>
-  <div class="panel">
-    <div class="panel-heading">
-      <%= review.author %> Submitted
-      <%= time_ago_in_words(review.created_at) %>
-      <% if is_admin? %>
-        <span>
-          <%= link_to "Delete", product_review_path(@product, review.id),
-                :data => {:confirm => "You sure?",
-                :method => "delete"},
-                class: "btn btn-danger" %>
-        </span>
-      <% end %>
+<div class="reviews">
+  <% @product.reviews.each do |review| %>
+    <div class="panel">
+      <div class="panel-heading">
+        <%= review.author %> Submitted
+        <%= time_ago_in_words(review.created_at) %>
+        <% if is_admin? %>
+          <span>
+            <%= link_to "Delete", product_review_path(@product, review.id),
+                  :data => {:confirm => "You sure?",
+                  :method => "delete"},
+                  class: "btn btn-danger" %>
+          </span>
+        <% end %>
+      </div>
+      <div class="panel-body">
+        <p><%= review.body %></p>
+      </div>
     </div>
-    <div class="panel-body">
-      <p><%= review.body %></p>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 <div class="panel">
-  <div class="panel-heading"><h4>Add Review</h4></div>
-  <div class="panel-body">
-    <%= render partial: "reviews/form", locals: {product: @product} %>
+  <div class="panel-heading"><h4><%= link_to "Add Review", new_product_review_path(@product), id: "new_review_link", class: "btn", remote: true %></h4></div>
+  <div class="panel-body" id="new_review_form">
+
   </div>
 </div>
