@@ -27,7 +27,6 @@ class ReviewsController < ApplicationController
     @product = Product.find(params[:product_id])
     @review= Review.find(params[:id])
     if @review.update(review_params)
-      flash[:notice] = "Review successfully updated!"
       respond_to do |format|
         format.html { redirect_to (request.env['HTTP_REFERER']) }
         format.js

@@ -15,3 +15,14 @@
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
+jQuery.fn.submitOnChange = function() {
+  this.find('.edit-review-field').change(function() {
+    $(this).parent().parent('form').submit();
+    console.log('hey');
+  });
+  return this;
+}
+
+// $(function() {
+//     $('.edit-review-field').submitOnChange();
+// });

@@ -1,8 +1,8 @@
 <%= render "layouts/errors", :object => @review %>
 
-<%= form_for @review, url: get_review_url(@review), remote: true do |f| %>
+<%= form_for [@product, @review], remote: true do |f| %>
   <div class="form-group">
-    <%= f.text_area :body, class: "form-control", placeholder: "Your Review" %>
+    <%= f.text_area :body, class: "form-control edit-review-field", placeholder: "Your Review" %>
+    <%= f.submit class: "btn btn-inverse" %>
   </div>
-  <%= f.submit class: "btn btn-inverse" %>
 <% end %>

@@ -1,13 +1,13 @@
 class ProductsController < ApplicationController
-  before_action :except => [:landing] do
-    flash[:notice] = "Please create an account." unless current_user
-    redirect_to signup_path unless current_user
-  end
-
-  before_action :except => [:show, :index, :landing] do
-    flash[:notice] = "Admin privilages required!" unless is_admin?
-    redirect_to signin_path unless is_admin?
-  end
+  # before_action :except => [:landing] do
+  #   flash[:notice] = "Please create an account." unless current_user
+  #   redirect_to signup_path unless current_user
+  # end
+  #
+  # before_action :except => [:show, :index, :landing] do
+  #   flash[:notice] = "Admin privilages required!" unless is_admin?
+  #   redirect_to signin_path unless is_admin?
+  # end
 
 
   def landing

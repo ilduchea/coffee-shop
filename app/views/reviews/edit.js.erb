@@ -1,2 +1,12 @@
 $('#review_<%= @review.id %> .btn:first').hide();
 $('#review_edit_<%= @review.id %>').append('<%= j render("form") %>');
+// $('.edit-review-field').focusout(function() {
+//   $(this).parent().parent('form').submit();
+// });
+// jQuery.fn.submitOnChange = function() {
+//   this.find('.edit-review-field').change(function() {
+//     $(this).parent().parent('form').submit();
+//     console.log('hey');
+//   });
+//   return this;
+// }
