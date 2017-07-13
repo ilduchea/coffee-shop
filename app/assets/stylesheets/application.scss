@@ -45,6 +45,7 @@ body {
 
   input {
     background: $offWhite;
+    color: $black;
   }
 
   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -80,6 +81,7 @@ body {
 
     input[type="text"], input[type="number"], textarea {
       background: $brown;
+      color: $black;
     }
   }
 
@@ -131,5 +133,11 @@ body {
   .btn-danger:hover {
     background: $lightred;
     color: $black;
+  }
+}
+
+#new_review_link {
+  span {
+    display: none;
   }
 }

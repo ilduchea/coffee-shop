@@ -1,0 +1,22 @@
+<div class="panel" id="review_<%= review.id %>">
+  <div class="panel-heading">
+    <%= review.author %> Submitted
+    <%= time_ago_in_words(review.created_at) %>
+    <% if is_admin? %>
+      <span>
+        <%= link_to "Edit", edit_product_review_path(review.product_id, review.id),
+              class: "btn",
+              remote: true %>
+        <%= link_to "Delete", product_review_path(review.product_id, review.id),
+              :data => {:confirm => "You sure?",
+              :method => "delete"},
+              class: "btn btn-danger",
+              remote: true %>
+      </span>
+    <% end %>
+  </div>
+  <div class="panel-body">
+    <p id="review_body_<%= review.id %>"><%= review.body %></p>
+    <p id="review_edit_<%= review.id %>"></p>
+  </div>
+</div>
